@@ -1,0 +1,276 @@
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navbar a.logout {
+    margin-top: auto;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.calendar {
+    width: 700px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.month {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 1px;
+}
+
+.day-name {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    font-weight: bold;
+}
+
+.day {
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-date {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.day:hover {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.diary-container {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.diary-container h2 {
+    margin-bottom: 20px;
+}
+
+#diary-date {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#diary-entry {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error-container,
+.success-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.error-container {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success-container {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 50px auto;
+}
+
+.error-message {
+    color: #f00;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: #008000;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        width: 200px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+
+    .navbar.active {
+        transform: translateX(0);
+    }
+
+    .navbar-toggle {
+        display: block;
+        padding: 14px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .navbar a {
+        padding: 14px;
+        text-align: left;
+    }
+
+    .content {
+        margin-left: 0;
+        padding-top: 50px;
+    }
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.navbar.desktop {
+    transform: none !important;
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
